@@ -28,7 +28,7 @@ function Survey() {
     e.preventDefault();
     setIsSubmitting(true);
     
-    let url = "http://localhost:5000/api/parents/autism/survey";
+    let url = `${import.meta.env.VITE_BACKEND_URL}/api/parents/autism/survey`;
     axios.post(url, {
       name: fields.name,
       level: fields.level,

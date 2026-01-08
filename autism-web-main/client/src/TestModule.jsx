@@ -27,17 +27,21 @@ function TestModule() {
   }, [currentQuestion, quizDatas.length]);
 
   async function updateMarks() {
-    try {
-      const url = await axios.post("http://localhost:5000/api/student/quiz/score", {
+  try {
+    const url = await axios.post(
+      `${import.meta.env.VITE_BACKEND_URL}/api/student/quiz/score`,
+      {
         name: getUserData.email.slice(0, getUserData.email.indexOf('@')).toUpperCase(),
         marks: `${score}/20`
-      });
-      const response = url.data;
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
+      }
+    );
+    const response = url.data;
+    console.log(response);
+  } catch (error) {
+    console.log(error);
   }
+}
+
 
   function handleAnswerClick(answer) {
     if (isAnswerSelected) return;

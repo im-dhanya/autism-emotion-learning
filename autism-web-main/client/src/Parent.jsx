@@ -21,7 +21,7 @@ function Parent() {
             return;
         }
 
-        let url = `http://localhost:5000/api/student/${name.toUpperCase()}`;
+        let url = `${import.meta.env.VITE_BACKEND_URL}/api/student/${name.toUpperCase()}`;
         axios.get(url)
             .then((res) => {
                 setDatas(res.data);

@@ -50,7 +50,9 @@ function RegisterPage(){
         if(registerInputs.name === "children"){
             async function registeruser(){
                 try {
-                    const url = await axios.post("http://localhost:5000/api/user/children/register",{
+                    const url = await axios.post(
+  `${import.meta.env.VITE_BACKEND_URL}/api/user/children/register`,
+  {
                         name : registerInputs.name,
                         email : registerInputs.email,
                         password : registerInputs.password
@@ -73,7 +75,9 @@ function RegisterPage(){
         if(registerInputs.name === "parent"){
             async function registerparent(){
                 try {
-                    const url = await axios.post("http://localhost:5000/api/user/parent/register",{
+                    const url = await axios.post(
+  `${import.meta.env.VITE_BACKEND_URL}/api/user/parent/register`,
+  {
                         name : registerInputs.name,
                         email : registerInputs.email,
                         password : registerInputs.password
@@ -148,7 +152,9 @@ function RegisterPage(){
         if(inputs.name === "children"){
             async function loginuser(){
                 try {
-                    const url = await axios.post("http://localhost:5000/api/user/children/login",{
+                    const url = await axios.post(
+  `${import.meta.env.VITE_BACKEND_URL}/api/user/children/login`,
+  {
                         name : inputs.name,
                         email : inputs.email,
                         password : inputs.password
@@ -172,7 +178,9 @@ function RegisterPage(){
         if(inputs.name === "parent"){
             async function loginparent(){
                 try {
-                    const url = await axios.post("http://localhost:5000/api/user/parent/login",{
+                    const url = await axios.post(
+  `${import.meta.env.VITE_BACKEND_URL}/api/user/parent/login`,
+  {
                         name : inputs.name,
                         email : inputs.email,
                         password : inputs.password
